@@ -1,21 +1,21 @@
 body {
   /* background-image: url("https://i.ibb.co/7kdw56k/webpizzatransp.png"); */
-  background-image: url("../img/webpizza30.png");
+  /* background-image: url("../img/webpizza30.png"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
-.div8 input {
+/* .div8 input {
   display: block;
-  /* width: 30%; */
+  width: 30%;
   border: 4px solid #fec63e;
   margin-bottom: 10px;
   background: none;
-  /* color: white; */
+  color: white;
   padding: 4px 10px;
   outline: none;
   font-size: 12px;
   font-family: Georgia, "Times New Roman", Times, serif;
-}
+} */
 
