@@ -4,12 +4,13 @@
 // Sabores (Apenas 2 sabores por pizza) (Apenas uma pizza) ()
 // Bebidas (Apenas uma) ()
 // Tipo de entrega ()
-// Dados para entrega ()
+// Dados para entrega: Nome, Celular, Rua, Número, Complemento, Bairro, Ponto de referência ()
 // Confirmar pedido ()
 // Forma de Pagamento (somente uma) ()
 // Mostar o valor do pedido na tela no final do pedido ()
 // Informar numero do pedido randomico ()
 // mandar uma mensagem ao usuário desta forma: “Agradecemos sua preferência senhor(a) Fulano de tal.” ()
+// document.write(`"Agradecemos sua preferência senhor(a) "${nome}"`)
 
 
 function preco() {
@@ -90,7 +91,6 @@ function preco() {
   }
   
   document.write(`<p>Preço final: R$ ${precoFinal.toFixed(2).replace(".", ",")}</p>`);
-
 
 }
 
