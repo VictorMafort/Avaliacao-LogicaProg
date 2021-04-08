@@ -14,14 +14,16 @@
 
 
 function pizzaria() {
-  let tamanho = prompt(`Escolha o tamanho da pizza`);
-  let borda = prompt(`Escolha o tipo da borda`);
-  let sabor = prompt(`Escolha o sabor da pizza`);
-  let bebida = prompt(`Escolha a sua bebida`);
-  let entrega = prompt(`Escolha forma de entrega`);
+  let tamanho = escolherTamanho();
+  let borda = escolherBorda();
+  let sabor1 = escolherPizzaUm();
+  let sabor2 = escolherPizzaDois();
+  let bebida = escolherBebida();
+  let entrega = escolherEntrega();
   let pagamento = prompt(`Escolha forma de pagamento`);
 
   let precoFinal = 0;
+
   let tamanhoPizza = [
     { tamanho: 'pequena', preco: 25.00 },
     { tamanho: 'media', preco: 30.00 },
@@ -37,7 +39,7 @@ function pizzaria() {
     { tipo: 'sem borda', preco: 0.00 }
   ];
 
-  let saborPizza = ['calabresa', '4 queijos', 'frango e catupiry', 'portuguesa', 'camarao', 'carne seca', 'lombo canadense', 'x fritas'];
+  // let saborPizza = ['calabresa', '4 queijos', 'frango e catupiry', 'portuguesa', 'camarao', 'carne seca', 'lombo canadense', 'x fritas'];
 
   let bebidas = [
     { sabor: 'coca cola', preco: 12.00 },
@@ -52,7 +54,7 @@ function pizzaria() {
     { tipo: 'delivery', preco: 5.00 }
   ];
 
-  let formaDePagamento = ['debito', 'credito', 'pix', 'picPay', 'dinheiro'];
+  // let formaDePagamento = ['debito', 'credito', 'pix', 'picPay', 'dinheiro'];
 
   for (const contTamanhoPizza of tamanhoPizza) {
     if (tamanho == contTamanhoPizza.tamanho) {
@@ -80,10 +82,6 @@ function pizzaria() {
 
   document.write(`<p>Preço final: R$ ${precoFinal.toFixed(2).replace(".", ",")}</p>`);
 }
-
-
-
-
 function escolherTamanho() {
   let tipo = document.getElementsByName("tamanho");
   let tamanho;
@@ -115,6 +113,8 @@ function escolherTamanho() {
       tamanho = undefined;
       break;
   } */
+
+  return tamanho;
 }
 
 function escolherBorda() {
@@ -152,6 +152,8 @@ function escolherBorda() {
       borda = undefined;
       break;
   } */
+
+  return borda;
 }
 
 function escolherPizzaUm() {
@@ -204,6 +206,8 @@ function escolherPizzaUm() {
       pizza = undefined;
       break;
   } */
+
+  return pizza;
 }
 
 function escolherPizzaDois() {
@@ -256,6 +260,8 @@ function escolherPizzaDois() {
       pizza = undefined;
       break;
   } */
+
+  return pizza;
 }
 
 function escolherBebida() {
@@ -288,6 +294,8 @@ function escolherBebida() {
       bebida = undefined;
       break;
   } */
+
+  return bebida;
 }
 
 function escolherEntrega() {
@@ -301,13 +309,15 @@ function escolherEntrega() {
 
   /*  switch (tipo) {
     case tipo[0].checked:
-      bebida = tipo[0].checked;
+      entrega = tipo[0].checked;
       break;
     case tipo[1].checked:
-      bebida = tipo[1].checked;
+      entrega = tipo[1].checked;
       break;
     default:
-      bebida = undefined;
+      entrega = undefined;
       break;
   } */
+
+  return entrega;
 }
