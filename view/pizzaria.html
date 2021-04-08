@@ -38,23 +38,7 @@
             </form>
             <p> Message is: <span id = "display_message"></span> </p>
      -->
-// O tamanho da pizza ()
-    (Pequena 20cm  - R$25,00), (Media 25cm  - R$30,00), (Gigante 35cm  - R$40,00), (Familia 40cm  - R$45,00)
- // Tipo de borda ()
- (Gorgonzola  - R$10,00), (Provolone  - R$8,00), (Catupiry  - R$5,00), (Cheddar - R$5,00), (Sem borda  - R$0,00)
-// Sabores (Apenas 2 sabores por pizza) (Apenas uma pizza) ()
-    (Calabresa)	- Mussarela, Calabresa e cebola
-    (4 Queijos) - Mussarela, Cheddar, Parmesão e Prato
-    (Frango com Catupiry) - Mussarela, Frango e Catupiry
-    (Portuguesa) - Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola
-    (Camarão) - Mussarela, Camarão, Salsinha e Cebolinha
-    (Carne seca) - Mussarela, Carne seca e cream cheese
-    (Lombo Canadense) - Mussarela, Lombo Canadense, Tomate, Orégano, Cebola
-    (X-Fritas) - Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita
-// Bebidas (Apenas uma) ()
-(Coca Cola  - R$12,00), (Fanta - R$10,00), (Guaraná Antarctica  - R$10,00), (H2O  - R$8,00), (Del Valle  - R$7,00)
-// Tipo de entrega ()
-(Retirada no Balcão - R$0,00), (Delivery  - R$5,00)
+
 
 <body>
 <div class = "div1">
@@ -112,6 +96,32 @@
     <p><h4>Escolha o tipo de entrega:</h4></p>
     <input type="radio" id="retirada" name="entrega" value="retirada" onclick="escolherEntrega()"/> Retirada no balcão - R$0,00<br/>
     <input type="radio" id="delivery" name="entrega" value="delivery" onclick="escolherEntrega()"/> Delivery - R$5,00<br/>
+</div>
+
+<div class = "div8">
+    <p><h4>Preencha suas informações:</h4></p>
+    <form>
+    Nome: <input type="text" name="nome" size="30"/>&nbsp&nbsp Celular: <input type="text" name="celular" size="12" maxlength="16"/>
+    <p></p>
+    Rua: <input type="text" name="rua" size="40"/>&nbsp&nbsp Número: <input type="number" name="numero" size="7"/>&nbsp&nbsp Complemento: <input type="text" name="complemento" size="12"/>
+    <p></p>
+    Bairro: <input type="text" name="bairro" />&nbsp&nbsp Ponto de referência: <input type="text" name="pontoRef" />
+    </form>
+</div>
+
+<div class = "div9">
+    <p><h4>Deseja confirmar pedido?</h4></p>
+    <input type="radio" id="sim" name="pedido" value="sim" onclick="confimarPedido()"/> Sim 
+    <input type="radio" id="nao" name="pedido" value="nao" onclick="confimarPedido()"/> Não - Página será resetada<br/>
+</div>
+
+<div class = "div10">
+    <script>
+        function mostrarEndereco(){
+            var endereco = document.getElementsByName("rua").value;
+            display_message.innerHTML= endereco;
+        }
+    </script>
 </div>
     <script src="./../js/script.js"></script>
 </body>
