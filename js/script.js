@@ -87,58 +87,227 @@ function pizzaria() {
 function escolherTamanho() {
   let tipo = document.getElementsByName("tamanho");
   let tamanho;
+  
   if (tipo[0].checked) {
     tamanho = tipo[0].checked;
   } else if (tipo[1].checked) {
     tamanho = tipo[1].checked;
   } else if (tipo[2].checked) {
     tamanho = tipo[2].checked;
+  } else {
+    tamanho = tipo[3].checked;
   }
 
-  switch (let tipo = document.getElementsByName("tamanho")) {
+ /*  switch (tipo) {
     case tipo[0].checked:
       tamanho = tipo[0].checked;
       break;
     case tipo[1].checked:
       tamanho = tipo[1].checked;
       break;
-    case tipo[1].checked:
-      tamanho = tipo[1].checked;
+    case tipo[2].checked:
+      tamanho = tipo[2].checked;
       break;
-    case tipo[1].checked:
-        tamanho = tipo[1].checked;
-        break;
-    
-      default:
-    break;
-  }
+    case tipo[3].checked:
+      tamanho = tipo[3].checked;
+      break;
+    default:
+      tamanho = undefined;
+      break;
+  } */
 }
 
 function escolherBorda() {
   let tipo = document.getElementsByName("borda");
-  let tamanho;
+  let borda;
   if (tipo[0].checked) {
-    tamanho = tipo[0].checked;
+    borda = tipo[0].checked;
   } else if (tipo[1].checked) {
-    tamanho = tipo[1].checked;
+    borda = tipo[1].checked;
   } else if (tipo[2].checked) {
-    tamanho = tipo[2].checked;
-  }
+    borda = tipo[2].checked;
+  } else if (tipo[3].checked) {
+    borda = tipo[3].checked;
+  } else {
+    borda = tipo[4].checked;
+  } 
+
+  /*  switch (tipo) {
+    case tipo[0].checked:
+      borda = tipo[0].checked;
+      break;
+    case tipo[1].checked:
+      borda = tipo[1].checked;
+      break;
+    case tipo[2].checked:
+      borda = tipo[2].checked;
+      break;
+    case tipo[3].checked:
+      borda = tipo[3].checked;
+      break;
+    case tipo[4].checked:
+      borda = tipo[4].checked;
+      break;
+    default:
+      borda = undefined;
+      break;
+  } */
 }
 
-function significadoValores() {
-  let tipo = document.getElementsByName("valores");
+function escolherPizzaUm() {
+  let tipo = document.getElementsByName("pizza");
+  let pizza;
   if (tipo[0].checked) {
-    alert(`Forma de declarar um valor na forma escopada. Utiliza-se esta técnica em vários momentos em
-                 um código, como por exemplo para declarar um valor global ou até mesmo dentro de um bloco.`);
+    pizza = tipo[0].checked;
   } else if (tipo[1].checked) {
-    alert(`Técnica para declarar um valor imutável, ou seja, que não vai mudar (constante). Exemplo: pi (3,14159...)`);
+    pizza = tipo[1].checked;
   } else if (tipo[2].checked) {
-    alert(`Forma de declarar um valor que é variável e que pode mudar. 
-                Este tipo de técnica se torna um escopo local apenas quando usado em funções.`);
+    pizza = tipo[2].checked;
   } else if (tipo[3].checked) {
-    alert(`Posições na memória e não valores. Isto acontece geralmente em objetos, 
-                quando se atribui um array a uma variável e de alguma forma esse valor é "referenciado" por uma outra variável.
-                Para realizar uma cópia de uma variável desse tipo é necessário cloná-la, utilizando "Object.assign"`);
-  }
+    pizza = tipo[3].checked;
+  } else if (tipo[4].checked) {
+    pizza = tipo[4].checked;
+  } else if (tipo[5].checked) {
+    pizza = tipo[5].checked;
+  } else if (tipo[6].checked) {
+    pizza = tipo[6].checked;
+  } else {
+    pizza = tipo[7].checked;
+  } 
+
+  /*  switch (tipo) {
+    case tipo[0].checked:
+      pizza = tipo[0].checked;
+      break;
+    case tipo[1].checked:
+      pizza = tipo[1].checked;
+      break;
+    case tipo[2].checked:
+      pizza = tipo[2].checked;
+      break;
+    case tipo[3].checked:
+      pizza = tipo[3].checked;
+      break;
+    case tipo[4].checked:
+      pizza = tipo[4].checked;
+      break;
+    case tipo[5].checked:
+      pizza = tipo[5].checked;
+      break;
+    case tipo[6].checked:
+      pizza = tipo[6].checked;
+      break;
+    case tipo[7].checked:
+      pizza = tipo[7].checked;
+      break;
+    default:
+      pizza = undefined;
+      break;
+  } */
+}
+
+function escolherPizzaDois() {
+  let tipo = document.getElementsByName("pizza");
+  let pizza;
+  if (tipo[0].checked) {
+    pizza = tipo[0].checked;
+  } else if (tipo[1].checked) {
+    pizza = tipo[1].checked;
+  } else if (tipo[2].checked) {
+    pizza = tipo[2].checked;
+  } else if (tipo[3].checked) {
+    pizza = tipo[3].checked;
+  } else if (tipo[4].checked) {
+    pizza = tipo[4].checked;
+  } else if (tipo[5].checked) {
+    pizza = tipo[5].checked;
+  } else if (tipo[6].checked) {
+    pizza = tipo[6].checked;
+  } else {
+    pizza = tipo[7].checked;
+  } 
+
+  /*  switch (tipo) {
+    case tipo[0].checked:
+      pizza = tipo[0].checked;
+      break;
+    case tipo[1].checked:
+      pizza = tipo[1].checked;
+      break;
+    case tipo[2].checked:
+      pizza = tipo[2].checked;
+      break;
+    case tipo[3].checked:
+      pizza = tipo[3].checked;
+      break;
+    case tipo[4].checked:
+      pizza = tipo[4].checked;
+      break;
+    case tipo[5].checked:
+      pizza = tipo[5].checked;
+      break;
+    case tipo[6].checked:
+      pizza = tipo[6].checked;
+      break;
+    case tipo[7].checked:
+      pizza = tipo[7].checked;
+      break;
+    default:
+      pizza = undefined;
+      break;
+  } */
+}
+
+function escolherBebida() {
+  let tipo = document.getElementsByName("bebida");
+  let bebida;
+  if (tipo[0].checked) {
+    bebida = tipo[0].checked;
+  } else if (tipo[1].checked) {
+    bebida = tipo[1].checked;
+  } else if (tipo[2].checked) {
+    bebida = tipo[2].checked;
+  } else {
+    bebida = tipo[3].checked;
+  } 
+
+  /*  switch (tipo) {
+    case tipo[0].checked:
+      bebida = tipo[0].checked;
+      break;
+    case tipo[1].checked:
+      bebida = tipo[1].checked;
+      break;
+    case tipo[2].checked:
+      bebida = tipo[2].checked;
+      break;
+    case tipo[3].checked:
+      bebida = tipo[3].checked;
+      break;
+    default:
+      bebida = undefined;
+      break;
+  } */
+}
+
+function escolherEntrega() {
+  let tipo = document.getElementsByName("entrega");
+  let entrega;
+  if (tipo[0].checked) {
+    entrega = tipo[0].checked;
+  } else {
+    entrega = tipo[1].checked;
+  } 
+
+  /*  switch (tipo) {
+    case tipo[0].checked:
+      bebida = tipo[0].checked;
+      break;
+    case tipo[1].checked:
+      bebida = tipo[1].checked;
+      break;
+    default:
+      bebida = undefined;
+      break;
+  } */
 }
