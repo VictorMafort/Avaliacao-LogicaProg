@@ -100,45 +100,45 @@
         var a;
         function mostrarOpcao1(){
             if(a==1){
-            document.getElementById("d9").style.display = "block";
-            return a=
+                document.getElementById("d9").style.display = "inline";
+                return a=0;
+            }else{
+                document.getElementById("d10").style.display = "none";
+                return a=1;
             }
         }
         function mostrarOpcao2(){
-            document.getElementById("d10").style.display = "block";
+            if(a==1){
+                document.getElementById("d10").style.display = "inline";
+                return a=0;
+            }else{
+                document.getElementById("d9").style.display = "none";
+                return a=1;
+            }
         }
     </script>
 </div>
-<!-- <div class = "div8">
-    <script>
-        
-    </script>
-</div> -->
-<div id="d9" class = "div9" style = "display: none;">
+<div id="d8" class = "div8">
     <p><h4>Preencha suas informações:</h4></p>
     <form>
     Nome: <input type="text" name="nome" size="30"/>&nbsp&nbsp Celular: <input type="text" name="celular" size="12" maxlength="16"/>
+    <p></p>
     </form>
 </div>
-<div id="d10" class = "div10" style = "display: none;">
-    <!-- <p><h4>Preencha suas informações:</h4></p>
-    <form>
-    Nome: <input type="text" name="nome" size="30"/>&nbsp&nbsp Celular: <input type="text" name="celular" size="12" maxlength="16"/>
-    <p></p> -->
-    <p></p>
+<div id="d9" class = "div9" style = "display: none;">
     Rua: <input type="text" name="rua" size="40"/>&nbsp&nbsp Número: <input type="number" name="numero" size="7"/>&nbsp&nbsp Complemento: <input type="text" name="complemento" size="12"/>
     <p></p>
     Bairro: <input type="text" name="bairro" />&nbsp&nbsp Ponto de referência: <input type="text" name="pontoRef"/>
     </form>
 </div>
 
-<div class = "div10">
+<div class = "div11">
     <p><h4>Deseja confirmar pedido?</h4></p>
     <input type="radio" id="sim" name="pedido" value="sim" onclick="confimarPedido()"/> Sim 
     <input type="radio" id="nao" name="pedido" value="nao" onclick="confimarPedido()"/> Não - Página será resetada<br/>
 </div>
 
-<div class = "div11">
+<div class = "div12">
     <script>
         function mostrarEndereco(){
             var endereco = document.getElementsByName("rua").value;

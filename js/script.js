@@ -336,10 +336,11 @@ function escolherEntrega() {
   return entrega;
 }
 
-// document.write(`Tamanho: ${tamanho}<br>
-//               Tipo de borda: ${borda}<br>
-//               Sabor 1: ${pizza}<br>
-//               Sabor 2 : ${pizza}<br>
-//               Bebida: ${bebida}<br>
-//               Entrega: ${entrega}<br>
-//               `)
+/*  document.write(`<p>Resumo do pedido</p>
+                Tamanho: ${tamanho}<br>
+               Tipo de borda: ${borda}<br>
+               Sabor 1: ${sabor1}<br>
+               Sabor 2 : ${sabor2}<br>
+               Bebida: ${bebida}<br>
+              Entrega: ${entrega}<br>
+               `) */  
