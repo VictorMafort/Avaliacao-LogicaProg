@@ -88,12 +88,16 @@ function escolherTamanho() {
   
   if (tipo[0].checked) {
     tamanho = tipo[0].checked;
+    alert("Funcionou");
   } else if (tipo[1].checked) {
     tamanho = tipo[1].checked;
+    alert("Funcionou");
   } else if (tipo[2].checked) {
     tamanho = tipo[2].checked;
+    alert("Funcionou");
   } else {
     tamanho = tipo[3].checked;
+    alert("Funcionou");
   }
 
  /*  switch (tipo) {
@@ -122,36 +126,46 @@ function escolherBorda() {
   let borda;
   if (tipo[0].checked) {
     borda = tipo[0].checked;
+    alert("Funcionou");
   } else if (tipo[1].checked) {
     borda = tipo[1].checked;
+    alert("Funcionou");
   } else if (tipo[2].checked) {
     borda = tipo[2].checked;
+    alert("Funcionou");
   } else if (tipo[3].checked) {
     borda = tipo[3].checked;
+    alert("Funcionou");
   } else {
     borda = tipo[4].checked;
+    alert("Funcionou");
   } 
 
-  /*  switch (tipo) {
-    case tipo[0].checked:
-      borda = tipo[0].checked;
-      break;
-    case tipo[1].checked:
-      borda = tipo[1].checked;
-      break;
-    case tipo[2].checked:
-      borda = tipo[2].checked;
-      break;
-    case tipo[3].checked:
-      borda = tipo[3].checked;
-      break;
-    case tipo[4].checked:
-      borda = tipo[4].checked;
-      break;
-    default:
-      borda = undefined;
-      break;
-  } */
+//     switch (tipo) {
+//     case tipo[0].checked:
+//       borda = tipo[0].checked;
+//       alert("Funcionou");
+//       break;
+//     case tipo[1].checked:
+//       borda = tipo[1].checked;
+//       alert("Funcionou");
+//       break;
+//     case tipo[2].checked:
+//       borda = tipo[2].checked;
+//       alert("Funcionou");
+//       break;
+//     case tipo[3].checked:
+//       borda = tipo[3].checked;
+//       alert("Funcionou");
+//       break;
+//     case tipo[4].checked:
+//       borda = tipo[4].checked;
+//       alert("Funcionou");
+//       break;
+//     default:
+//       borda = undefined;
+//       break;
+//   } 
 
   return borda;
 }
@@ -321,3 +335,11 @@ function escolherEntrega() {
 
   return entrega;
 }
+
+// document.write(`Tamanho: ${tamanho}<br>
+//               Tipo de borda: ${borda}<br>
+//               Sabor 1: ${pizza}<br>
+//               Sabor 2 : ${pizza}<br>
+//               Bebida: ${bebida}<br>
+//               Entrega: ${entrega}<br>
+//               `)
