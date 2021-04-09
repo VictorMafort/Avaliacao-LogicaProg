@@ -12,7 +12,9 @@
 // mandar uma mensagem ao usuário desta forma: “Agradecemos sua preferência senhor(a) Fulano de tal.” ()
 // document.write(`"Agradecemos sua preferência senhor(a) "${nome}"`)
 
+let nomeUsuario = document.getElementsByName("nome").innerHTML;
 
+pizzaria();
 function pizzaria() {
   let tamanho = escolherTamanho();
   let borda = escolherBorda();
@@ -20,7 +22,7 @@ function pizzaria() {
   let sabor2 = escolherPizzaDois();
   let bebida = escolherBebida();
   let entrega = escolherEntrega();
-  let pagamento = prompt(`Escolha forma de pagamento`);
+  // let pagamento = prompt(`Escolha forma de pagamento`);
 
   let precoFinal = 0;
 
@@ -54,7 +56,7 @@ function pizzaria() {
     { tipo: 'delivery', preco: 5.00 }
   ];
 
-  // let formaDePagamento = ['debito', 'credito', 'pix', 'picPay', 'dinheiro'];
+  let formaDePagamento = ['debito', 'credito', 'pix', 'picPay', 'dinheiro'];
 
   for (const contTamanhoPizza of tamanhoPizza) {
     if (tamanho == contTamanhoPizza.tamanho) {
@@ -84,20 +86,20 @@ function pizzaria() {
 }
 function escolherTamanho() {
   let tipo = document.getElementsByName("tamanho");
-  let tamanho;
+  let preco;
   
   if (tipo[0].checked) {
-    tamanho = tipo[0].checked;
-    alert("Funcionou");
+    preco = 25.00;
+    document.write(preco);
   } else if (tipo[1].checked) {
-    tamanho = tipo[1].checked;
-    alert("Funcionou");
+    preco = tipo[1].checked;
+    // alert("Funcionou");
   } else if (tipo[2].checked) {
-    tamanho = tipo[2].checked;
-    alert("Funcionou");
+    preco = tipo[2].checked;
+    // alert("Funcionou");
   } else {
-    tamanho = tipo[3].checked;
-    alert("Funcionou");
+    preco = tipo[3].checked;
+    // alert("Funcionou");
   }
 
  /*  switch (tipo) {
@@ -126,19 +128,19 @@ function escolherBorda() {
   let borda;
   if (tipo[0].checked) {
     borda = tipo[0].checked;
-    alert("Funcionou");
+    // alert("Funcionou");
   } else if (tipo[1].checked) {
     borda = tipo[1].checked;
-    alert("Funcionou");
+    // alert("Funcionou");
   } else if (tipo[2].checked) {
     borda = tipo[2].checked;
-    alert("Funcionou");
+    // alert("Funcionou");
   } else if (tipo[3].checked) {
     borda = tipo[3].checked;
-    alert("Funcionou");
+    // alert("Funcionou");
   } else {
     borda = tipo[4].checked;
-    alert("Funcionou");
+    // alert("Funcionou");
   } 
 
 //     switch (tipo) {
@@ -336,11 +338,38 @@ function escolherEntrega() {
   return entrega;
 }
 
-/*  document.write(`<p>Resumo do pedido</p>
-                Tamanho: ${tamanho}<br>
-               Tipo de borda: ${borda}<br>
-               Sabor 1: ${sabor1}<br>
-               Sabor 2 : ${sabor2}<br>
-               Bebida: ${bebida}<br>
-              Entrega: ${entrega}<br>
-               `) */  
+/* function calcularTroco(){
+  // let pagamento = prompt(`Escolha forma de pagamento`);
+
+  if(pagamento == 'dinheiro'){
+    let respostaUsuario = prompt(`Precisa de troco? \nS - sim e N - não`);
+    let respostaUsuario1 = prompt(`Digite o valor em dinheiro a pagar: `);
+    let calculo = respostaUsuario1 - precoTotalDoPedido;
+
+    return calculo;
+    document.write(`Seu troco foi de R$ ${calculo.toFixed(2).replace(".",",")}`);
+  }
+} */
+
+function imprimeResumoPedido(){
+  document.write(`<p>Resumo do seu pedido Sr.(a) ${nomeUsuario}</p>
+                  Tamanho: ${tamanho}<br>
+                  Tipo de borda: ${borda}<br>
+                  Sabor 1: ${sabor1}<br>
+                  Sabor 2 : ${sabor2}<br>
+                  Bebida: ${bebida}<br>
+                  Entrega: ${entrega}<br>
+               `) 
+}
+
+function tempoDeEspera(){
+  let numeroAleatorio = Math.floor(Math.random() * 1000); // numero aleatorio entre 0 e 1000
+  document.write(`O seu pedido é o número <strong>${numeroAleatorio}</strong>, e o tempo estimado para a entrega é de 90 minutos`);
+}
+
+function imprimeAgradecimento(){
+  document.write(`<strong>Agradecemos sua preferência senhor(a) ${nomeUsuario}.</strong>`);
+}
+
+
+// document.querySelector('input[id=pequena]:checked').value
