@@ -239,6 +239,7 @@ function display() {
   message += `<li><b>Uma pizza metade</b> ${escolherPizzaUm()}, <b>metade</b> ${escolherPizzaDois()}.`;
   message += `<li><b>Bebida: </b>${pedido.tipoDeBebida.sabor}`;
   message += `<li><b>Tipo de Entrega: </b>${escolherEntrega2()}`;
+  // message += `<li><b>Troco caso necessário: </b>${troco}`;
   // message += `<li><b>Forma de Pagamento: </b>${escolherPagamento()}</ul>`;
   message += `<li><b>Valor Total do Pedido: </b>R$ ${precoFinal.toFixed(2).replace(".", ",")}`;
   message += `<li><b>Observações do Pedido: </b> ${observacoes}`;
