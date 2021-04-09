@@ -4,56 +4,302 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Pizza</title>
+    <title>Web Pizzas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./../css/style.css">
+    <!-- <script src="./../js/script.js"></script> -->
 </head>
-<!-- <form>
-    Nome: <input type="text" name="nome" />
-    <p></p>
-    Celular: <input type="text" name="celular" />
-    <p></p>
-    Rua: <input type="text" name="rua" />
-    <p></p>
-    Número: <input type="text" name="numero" />
-    <p></p>
-    Complemento: <input type="text" name="complemento" />
-    <p></p>
-    Bairro: <input type="text" name="bairro" />
-    <p></p>
-    Ponto de referência: <input type="text" name="pontoRef" />
-    <p></p> 
-    <input type="submit" name="enviar" value="enviar"
-    </form> />-->
-
-    <!-- Assim mostra oq foi inserido no campo
-    <script>
-        function mostrarEndereco(){
-            var endereco = document.getElementById("endereco").value;
-            display_message.innerHTML= endereco;
-        }
-    </script>
-        <form>
-            Enter message: <input type="text" id = "endereco">
-            <input type="button" onclick="mostrarEndereco()" value="enviar" />
-            </form>
-            <p> Message is: <span id = "display_message"></span> </p>
-     -->
-
-
 <body>
-<div class = "div1">
-    <h1><p><center>Web Pizza</center></p></h1>
+    <header class=" header">
+        <div class="container">
+          <a href="index.html" class="grid-4">
+            <img src="img/imagem-original-logo.jpeg" alt="logo">
+          </a>
+          <nav class="grid-12 header_menu">
+            <ul>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <section class="principal">
+        <div class="container">
+          <!-- <div class="div1">
+            <h1>
+              <p>
+                <center>Web Pizzas</center>
+              </p>
+            </h1>
+          </div> -->
+          <div class="div2">
+            <p>
+            <h3>
+              <center>Seja Bem Vindo(a) ao sistema de pedidos da Web Pizzas!</center>
+            </h3>
+            </p>
+          </div>
+    
+          <div class="div3">
+            <p>
+            <h4>Por favor, escolha o tamanho da pizza:</h4>
+            </p>
+            <input type="radio" class="tampizza" id="pequena" name="tamanho" value="Pequena" onclick="escolherTamanho();saidaTamanho()" /> Pequena 20cm - R$25,00<br />
+            <input type="radio" class="tampizza" id="media" name="tamanho" value="media" onclick="escolherTamanho();saidaTamanho()" /> Media 25cm - R$30,00<br />
+            <input type="radio" class="tampizza" id="gigante" name="tamanho" value="gigante" onclick="escolherTamanho();saidaTamanho()" /> Gigante 35cm - R$40,00<br />
+            <input type="radio" class="tampizza" id="familia" name="tamanho" value="familia" onclick="escolherTamanho();saidaTamanho()" /> Familia 40cm - R$45,00<br />
+    
+            <script>
+            // var tamDaPizza;
+            // function saidaTamanho(){
+    
+            //     var tipo = document.getElementsByName("tamanho");
+            //     let tamanho;
+    
+            //     if (tipo[0].checked) {
+            //         var valor = tipo[0].checked.value;
+            //     } else if (tipo[1].checked) {
+            //         tamanho = tipo[1].checked;
+    
+            //     } else if (tipo[2].checked) {
+            //         tamanho = tipo[2].checked;
+    
+            //     } else {
+            //         tamanho = tipo[3].checked;
+    
+            //     } 
+            // }
+            </script>
+          </div>
+    
+          <div class="div4">
+            <p>
+            <h4>Agora escolha o tipo de borda:</h4>
+            </p>
+            <input type="radio" id="gorgonzola" name="borda" value="gorgonzola" onclick="escolherBorda();saidaBorda()" /> Gorgonzola - R$10,00<br />
+            <input type="radio" id="provolone" name="borda" value="provolone" onclick="escolherBorda();saidaBorda()" /> Provolone - R$8,00<br />
+            <input type="radio" id="catupiry" name="borda" value="catupiry" onclick="escolherBorda();saidaBorda()" /> Catupiry - R$5,00<br />
+            <input type="radio" id="cheddar" name="borda" value="cheddar" onclick="escolherBorda();saidaBorda()" /> Cheddar - R$5,00<br />
+            <input type="radio" id="semBorda" name="borda" value="semBorda" onclick="escolherBorda();saidaBorda()" /> Sem borda - R$0,00<br />
+          </div>
+    
+          <section class="sabores">
+            <div class="div5 grid-8">
+              <p>
+              <h4>Escolha o 1° sabor de pizza:</h4>
+              </p>
+              <input type="radio" id="calabresa" name="pizza" value="calabresa" onclick="escolherPizzaUm()"><strong>Calabresa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Calabresa e cebola<br />
+              <input type="radio" id="4 queijos" name="pizza" value="4 queijos" onclick="escolherPizzaUm()"><strong>4 Queijos</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Cheddar, Parmesão e Prato<br />
+              <input type="radio" id="frangoCatupiry" name="pizza" value="frangoCatupiry" onclick="escolherPizzaUm()"><strong>Frango com Catupiry</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Frango e Catupiry<br />
+              <input type="radio" id="portuguesa" name="pizza" value="portuguesa" onclick="escolherPizzaUm()"><strong>Portuguesa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola<br />
+              <input type="radio" id="camarao" name="pizza" value="camarao" onclick="escolherPizzaUm()"><strong>Camarão</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Camarão, Salsinha e Cebolinha<br />
+              <input type="radio" id="carneSeca" name="pizza" value="carneSeca" onclick="escolherPizzaUm()"><strong>Carne Seca</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Carne seca e cream cheese<br />
+              <input type="radio" id="lomboCanadense" name="pizza" value="lomboCanadense" onclick="escolherPizzaUm()"><strong>Lombo Canadense</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Lombo Canadense, Tomate, Orégano, Cebola<br />
+              <input type="radio" id="xFritas" name="pizza" value="xFritas" onclick="escolherPizzaUm()"><strong>X-Fritas</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita<br />
+            </div>
+      
+            <div class="div5 grid-8">
+              <p>
+              <h4>Escolha o 2° sabor de pizza:</h4>
+              </p>
+              <input type="radio" id="calabresa" name="pizza" value="calabresa" onclick="escolherPizzaDois()"><strong>Calabresa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Calabresa e cebola<br />
+              <input type="radio" id="4 queijos" name="pizza" value="4 queijos" onclick="escolherPizzaDois()"><strong>4 Queijos</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Cheddar, Parmesão e Prato<br />
+              <input type="radio" id="frangoCatupiry" name="pizza" value="frangoCatupiry" onclick="escolherPizzaDois()"><strong>Frango com Catupiry</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Frango e Catupiry<br />
+              <input type="radio" id="portuguesa" name="pizza" value="portuguesa" onclick="escolherPizzaDois()"><strong>Portuguesa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola<br />
+              <input type="radio" id="camarao" name="pizza" value="camarao" onclick="escolherPizzaDois()"><strong>Camarão</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Camarão, Salsinha e Cebolinha<br />
+              <input type="radio" id="carneSeca" name="pizza" value="carneSeca" onclick="escolherPizzaDois()"><strong>Carne Seca</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Carne seca e cream cheese<br />
+              <input type="radio" id="lomboCanadense" name="pizza" value="lomboCanadense" onclick="escolherPizzaDois()"><strong>Lombo Canadense</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Lombo Canadense, Tomate, Orégano, Cebola<br />
+              <input type="radio" id="xFritas" name="pizza" value="xFritas" onclick="escolherPizzaDois()"><strong>X-Fritas</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita<br />
+            </div>
+          </section>
+    
+          <div id="textArea">
+            <p><h4>Deseja acrescentar alguma observação?</h4></p>
+            <input type="radio" id="txtAreaS" name="txtArea" onclick="observacoesSim()"> Sim<br>
+            <input type="radio" id="txtAreaN" name="txtArea" onclick="observacoesNao()"> Não<br>
+            <textarea name="observacoesNoPedido" id="cxTexto" rows="3" cols="80" style="display: none;"></textarea>
+        
+            <script>
+                function observacoesSim(){
+                    document.getElementById("cxTexto").style.display = "inline";
+                }
+                function observacoesNao(){
+                    document.getElementById("cxTexto").style.display = "none";
+                }
+            </script>
+        </div>
+    
+        <div class = "div6">
+          <p><h4>Gostaria de incluir uma bebida?</h4></p>
+          <input type="radio" id="semBebida" name="bebida" value="semBebida" onclick="escolherBebida()"/> Não<br/>
+          <input type="radio" id="cocaCola" name="bebida" value="cocaCola" onclick="escolherBebida()"/> Coca Cola - R$12,00<br/>
+          <input type="radio" id="fanta" name="bebida" value="fanta" onclick="escolherBebida()"/> Fanta - R$10,00<br/>
+          <input type="radio" id="guaranaAntarctica" name="bebida" value="guaranaAntarctica" onclick="escolherBebida()"/> Guaraná Antarctica - R$10,00<br/>
+          <input type="radio" id="delValle" name="bebida" value="delValle" onclick="escolherBebida()"/> Del Valle - R$7,00<br/>
+      </div>
+    
+      <div class = "div7">
+        <p><h4>Escolha o tipo de entrega:</h4></p>
+        <input type="radio" id="retirada" name="entrega" value="retirada" onclick="mostrarOpcao1()"/> Retirada no balcão - R$0,00<br/>
+        <input type="radio" id="delivery" name="entrega" value="delivery" onclick="mostrarOpcao2()"/> Delivery - R$5,00<br/>
+        <script>
+            function mostrarOpcao1(){
+                document.getElementById("d8").style.display = "inline";
+                document.getElementById("d9").style.display = "none";
+            }
+            function mostrarOpcao2(){
+                document.getElementById("d8").style.display = "inline";
+                document.getElementById("d9").style.display = "inline";
+            }
+        </script>
+    </div>
+    
+    <div id="d8" class = "div8" style = "display: none;">
+        <p><h4>Preencha suas informações:</h4></p>
+        <form>
+        Nome: <input type="text" name="nome" size="30" id="nomeCliente"/>&nbsp&nbsp Celular: <input type="text" name="celular" size="12" maxlength="16" id="clienteCelular"/>
+        <p></p>
+        </form>
+    </div>
+    
+    <div id="d9" class = "div9" style = "display: none;">
+      Rua: <input type="text" name="rua" size="40" id="rua"/>&nbsp&nbsp Número: <input type="number" name="numero" size="7" id="numero"/>&nbsp&nbsp Complemento: <input type="text" name="complemento" size="12" id="comp"/>
+      <p></p>
+      Bairro: <input type="text" name="bairro" id="bairro"/>&nbsp&nbsp Ponto de referência: <input type="text" name="pontoRef" id="pontoRef"/>
+      </form>
+    </div>
+    
+    <div class = "pagamento">
+      <p><h4>Escolha a forma de pagamento:</h4></p>
+      <input type="radio" name="pag" id="cartao" value="cartao" onclick="esconderOpcoes()"> Cartão - Débito ou Crédito<br>
+      <input type="radio" name="pag" id="pix" value="pix" onclick="esconderOpcoes()"> Pix<br>
+      <input type="radio" name="pag" id="PicPay" value="PicPay" onclick="esconderOpcoes()"> PicPay<br>
+      <input type="radio" name="pag" id="dinheiro" value="dinheiro" onclick="formaPagamento()"> Dinheiro<br>
+    
+      <script>
+          function formaPagamento(){
+              document.getElementById("din").style.display = "inline";
+          }
+          function esconderOpcoes(){
+              document.getElementById("din").style.display = "none";
+          }
+      </script>
+    </div>
+    
+    <div id="din" style="display: none;">
+      <p>Precisa de troco?</p>
+      <input type="radio" name="troco" id="sdindin" value="dindin" onclick="calcularTroco()"> Sim <input type="number" name="caixaTroco" id="troco" style="display: none;" onclick="calcularTroco()"><br>
+      <input type="radio" name="troco" id="ndindin" value="ndindin" onclick="naoCalcularTroco()"> Não<br>
+    
+    
+      <script>
+          function calcularTroco(){
+              document.getElementById("sdindin").style.display = "inline";
+              document.getElementById("troco").style.display = "inline";
+          }
+          function naoCalcularTroco(){
+              document.getElementById("troco").style.display = "none"; 
+          }
+      </script>
+    </div>
+    
+    <div class = "endereco">
+      <script>
+          function mostrarEndereco(){
+              var endereco = document.getElementsByName("rua").value;
+              display_message.innerHTML= endereco;
+          }
+      </script>
+    </div>
+      <script src="./../js/script.js"></script>
+    <div class = "div11">
+      <input type="button" id="sim" name="pedido" value="Confirmar Pedido" onclick="confimarPedido()"/>
+      <script>
+          function confimarPedido(){
+              document.getElementById("pedido").style.display = "inline";            
+          }
+      </script>
+    </div>
+    
+    <div id="pedido" style="display: none;">
+      <script>
+          // let nome = document.querySelector('nomeCliente').value;
+          // let celular = document.querySelector('clienteCelular').value;
+          // let endereco = document.querySelector('rua').value + "," + document.querySelector('numero').value + "," + document.querySelector('comp').value + "," + document.querySelector('bairro').value + "," + document.querySelector('pontoRef').value + ".";
+          // var tamDaPizza = document.querySelector('input[name="tamanho"]:checked').value;
+          // document.querySelector('input[name="tamanho"]:checked').val();
+    
+          
+          // var tamDaPizza = document.getElementsByName("tamanho").checked;
+          // document.write(tamDaPizza);
+          
+      </script>
+    </div>
+    
+    
+        </div> <!-- final container -->
+      </section>
+
+      <div class="quebra_com_imagem container">
+        <blockquote class="quote-externo">
+          <p>"Faça o teu melhor, na condição que você tem, enquanto você não tem condições melhores, para fazer melhor ainda!"</p>
+          <cite>Sergio Cortella</cite>
+        </blockquote>
+      </div>
+
+      <footer>
+        <div class="footer">
+          <!-- fundo preto -->
+          <div class="container">
+            <!-- contem o conteudo -->
+            <div class="grid-8 footer_historia">
+              <h3>nossa história</h3>
+              <p>O verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana. Interesse por todos os detalhes da vida cotidiana.</p>
+            </div>
+    
+            <div class="grid-4 footer_contato">
+              <h3>contato</h3>
+              <ul>
+                <li>- (22) 2599-9999</li>
+                <li>- contato@webpizzaria.com</li>
+                <li>- Nova Friburgo, RJ</li>
+              </ul>
+            </div>
+            <div class="grid-4 footer_redes">
+              <h3>redes sociais</h3>
+              <ul>
+                <li><a href="http://facebook.com" target="_blank"><img src="img/facebook.png" alt="icone facebook"></a></li>
+                <li><a href="http://instagram.com" target="_blank"><img src="img/instagram.png" alt="icone instagram"></a></li>
+                <li><a href="http://twitter.com" target="_blank"><img src="img/twitter.png" alt="icone twitter"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <div class="direitos">
+          <div class="container">
+            <p class="grid-16">Web Pizzaria 2020 - Alguns direitos reservados</p>
+          </div>
+        </div>
+      </footer>      
+
+<!-- <div class = "div1">
+    <h1><p><center>Web Pizzas</center></p></h1>
 </div>
 <div class = "div2">
-    <p><h3><center>Seja Bem Vindo(a) ao sistema de pedidos da Web Pizza!</center></h3></p>
+    <p><h3><center>Seja Bem Vindo(a) ao sistema de pedidos da Web Pizzas!</center></h3></p>
 </div>
+
 <div class = "div3">
     <p><h4>Por favor, escolha o tamanho da pizza:</h4></p>
-    <input type="radio" id="pequena" name="tamanho" value="pequena" onclick="escolherTamanho()"/> Pequena 20cm  - R$25,00<br/>
-    <input type="radio" id="media" name="tamanho" value="media" onclick="escolherTamanho()"/> Media 25cm  - R$30,00<br/>
-    <input type="radio" id="gigante" name="tamanho" value="gigante" onclick="escolherTamanho()"/> Gigante 35cm  - R$40,00<br/>
-    <input type="radio" id="familia" name="tamanho" value="familia" onclick="escolherTamanho()"/> Familia 40cm  - R$45,00<br/>
+    <input type="radio" class="tampizza" id="pequena" name="tamanho" value="Pequena" onclick="escolherTamanho()"/> Pequena 20cm  - R$25,00<br/>
+    <input type="radio" class="tampizza" id="media" name="tamanho" value="media" onclick="escolherTamanho()"/> Media 25cm  - R$30,00<br/>
+    <input type="radio" class="tampizza" id="gigante" name="tamanho" value="gigante" onclick="escolherTamanho()"/> Gigante 35cm  - R$40,00<br/>
+    <input type="radio" class="tampizza" id="familia" name="tamanho" value="familia" onclick="escolherTamanho()"/> Familia 40cm  - R$45,00<br/>
+    
 </div>
+
 <div class = "div4">
     <p><h4>Agora escolha o tipo de borda:</h4></p>
     <input type="radio" id="gorgonzola" name="borda" value="gorgonzola" onclick="escolherBorda()"/> Gorgonzola  - R$10,00<br/>
@@ -62,27 +308,44 @@
     <input type="radio" id="cheddar" name="borda" value="cheddar" onclick="escolherBorda()"/> Cheddar - R$5,00<br/>
     <input type="radio" id="semBorda" name="borda" value="semBorda" onclick="escolherBorda()"/> Sem borda  - R$0,00<br/>
 </div>
+
 <div class = "div5">
     <p><h4>Escolha o 1° sabor de pizza:</h4></p>
-    <input type="radio" id="calabresa" name="pizza" value="calabresa" onclick="escolherPizzaUm()"><strong>Calabresa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Calabresa e cebola<br/>
-    <input type="radio" id="4 queijos" name="pizza" value="4 queijos" onclick="escolherPizzaUm()"><strong>4 Queijos</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Cheddar, Parmesão e Prato<br/>
-    <input type="radio" id="frangoCatupiry" name="pizza" value="frangoCatupiry" onclick="escolherPizzaUm()"><strong>Frango com Catupiry</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Frango e Catupiry<br/>
-    <input type="radio" id="portuguesa" name="pizza" value="portuguesa" onclick="escolherPizzaUm()"><strong>Portuguesa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola<br/>
-    <input type="radio" id="camarao" name="pizza" value="camarao" onclick="escolherPizzaUm()"><strong>Camarão</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Camarão, Salsinha e Cebolinha<br/>
-    <input type="radio" id="carneSeca" name="pizza" value="carneSeca" onclick="escolherPizzaUm()"><strong>Carne Seca</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Carne seca e cream cheese<br/>
-    <input type="radio" id="lomboCanadense" name="pizza" value="lomboCanadense" onclick="escolherPizzaUm()"><strong>Lombo Canadense</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Lombo Canadense, Tomate, Orégano, Cebola<br/>
-    <input type="radio" id="xFritas" name="pizza" value="xFritas" onclick="escolherPizzaUm()"><strong>X-Fritas</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita<br/>
+    <input type="radio" id="calabresa" name="pizza1" value="calabresa"><strong>Calabresa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Calabresa e cebola<br/>
+    <input type="radio" id="4 queijos" name="pizza1" value="4 queijos"><strong>4 Queijos</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Cheddar, Parmesão e Prato<br/>
+    <input type="radio" id="frangoCatupiry" name="pizza1" value="frangoCatupiry"><strong>Frango com Catupiry</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Frango e Catupiry<br/>
+    <input type="radio" id="portuguesa" name="pizza1" value="portuguesa"><strong>Portuguesa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola<br/>
+    <input type="radio" id="camarao" name="pizza1" value="camarao"><strong>Camarão</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Camarão, Salsinha e Cebolinha<br/>
+    <input type="radio" id="carneSeca" name="pizza1" value="carneSeca"><strong>Carne Seca</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Carne seca e cream cheese<br/>
+    <input type="radio" id="lomboCanadense" name="pizza1" value="lomboCanadense"><strong>Lombo Canadense</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Lombo Canadense, Tomate, Orégano, Cebola<br/>
+    <input type="radio" id="xFritas" name="pizza1" value="xFritas"><strong>X-Fritas</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita<br/>
 </div>
-<div class = "div5">
+
+<div class = "div6">
     <p><h4>Escolha o 2° sabor de pizza:</h4></p>
-    <input type="radio" id="calabresa" name="pizza" value="calabresa" onclick="escolherPizzaDois()"><strong>Calabresa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Calabresa e cebola<br/>
-    <input type="radio" id="4 queijos" name="pizza" value="4 queijos" onclick="escolherPizzaDois()"><strong>4 Queijos</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Cheddar, Parmesão e Prato<br/>
-    <input type="radio" id="frangoCatupiry" name="pizza" value="frangoCatupiry" onclick="escolherPizzaDois()"><strong>Frango com Catupiry</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Frango e Catupiry<br/>
-    <input type="radio" id="portuguesa" name="pizza" value="portuguesa" onclick="escolherPizzaDois()"><strong>Portuguesa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola<br/>
-    <input type="radio" id="camarao" name="pizza" value="camarao" onclick="escolherPizzaDois()"><strong>Camarão</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Camarão, Salsinha e Cebolinha<br/>
-    <input type="radio" id="carneSeca" name="pizza" value="carneSeca" onclick="escolherPizzaDois()"><strong>Carne Seca</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Carne seca e cream cheese<br/>
-    <input type="radio" id="lomboCanadense" name="pizza" value="lomboCanadense" onclick="escolherPizzaDois()"><strong>Lombo Canadense</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Lombo Canadense, Tomate, Orégano, Cebola<br/>
-    <input type="radio" id="xFritas" name="pizza" value="xFritas" onclick="escolherPizzaDois()"><strong>X-Fritas</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita<br/>
+    <input type="radio" id="calabresa" name="pizza2" value="calabresa"><strong>Calabresa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Calabresa e cebola<br/>
+    <input type="radio" id="4 queijos" name="pizza2" value="4 queijos"><strong>4 Queijos</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Cheddar, Parmesão e Prato<br/>
+    <input type="radio" id="frangoCatupiry" name="pizza2" value="frangoCatupiry"><strong>Frango com Catupiry</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Frango e Catupiry<br/>
+    <input type="radio" id="portuguesa" name="pizza2" value="portuguesa"><strong>Portuguesa</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Pimentão, Cebola, Presunto, Ovo, Cebola<br/>
+    <input type="radio" id="camarao" name="pizza2" value="camarao"><strong>Camarão</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Camarão, Salsinha e Cebolinha<br/>
+    <input type="radio" id="carneSeca" name="pizza2" value="carneSeca"><strong>Carne Seca</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Carne seca e cream cheese<br/>
+    <input type="radio" id="lomboCanadense" name="pizza2" value="lomboCanadense"><strong>Lombo Canadense</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Lombo Canadense, Tomate, Orégano, Cebola<br/>
+    <input type="radio" id="xFritas" name="pizza2" value="xFritas"><strong>X-Fritas</strong><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mussarela, Contra-filé, Presunto, Bacon, Ovo, Tomate, Cebola, Batata Frita<br/>
+</div>
+<div id="textArea">
+    <p><h4>Deseja acrescentar alguma observação?</h4></p>
+    <input type="radio" id="txtAreaS" name="txtArea" onclick="observacoesSim()"> Sim<br>
+    <input type="radio" id="txtAreaN" name="txtArea" onclick="observacoesNao()"> Não<br>
+    <textarea name="observacoesNoPedido" id="cxTexto" rows="3" cols="80" style="display: none;"></textarea>
+
+    <script>
+        function observacoesSim(){
+            document.getElementById("cxTexto").style.display = "inline";
+        }
+        function observacoesNao(){
+            document.getElementById("cxTexto").style.display = "none";
+        }
+    </script>
 </div>
 <div class = "div6">
     <p><h4>Gostaria de incluir uma bebida?</h4></p>
@@ -92,53 +355,76 @@
     <input type="radio" id="guaranaAntarctica" name="bebida" value="guaranaAntarctica" onclick="escolherBebida()"/> Guaraná Antarctica - R$10,00<br/>
     <input type="radio" id="delValle" name="bebida" value="delValle" onclick="escolherBebida()"/> Del Valle - R$7,00<br/>
 </div>
+
 <div class = "div7">
     <p><h4>Escolha o tipo de entrega:</h4></p>
     <input type="radio" id="retirada" name="entrega" value="retirada" onclick="mostrarOpcao1()"/> Retirada no balcão - R$0,00<br/>
     <input type="radio" id="delivery" name="entrega" value="delivery" onclick="mostrarOpcao2()"/> Delivery - R$5,00<br/>
     <script>
-        var a;
         function mostrarOpcao1(){
-            if(a==1){
-                document.getElementById("d9").style.display = "inline";
-                return a=0;
-            }else{
-                document.getElementById("d10").style.display = "none";
-                return a=1;
-            }
+            document.getElementById("d8").style.display = "inline";
+            document.getElementById("d9").style.display = "none";
         }
         function mostrarOpcao2(){
-            if(a==1){
-                document.getElementById("d10").style.display = "inline";
-                return a=0;
-            }else{
-                document.getElementById("d9").style.display = "none";
-                return a=1;
-            }
+            document.getElementById("d8").style.display = "inline";
+            document.getElementById("d9").style.display = "inline";
         }
     </script>
 </div>
-<div id="d8" class = "div8">
+
+<div id="d8" class = "div8" style = "display: none;">
     <p><h4>Preencha suas informações:</h4></p>
     <form>
-    Nome: <input type="text" name="nome" size="30"/>&nbsp&nbsp Celular: <input type="text" name="celular" size="12" maxlength="16"/>
+    Nome: <input type="text" name="nome" size="30" id="nomeCliente"/>&nbsp&nbsp Celular: <input type="text" name="celular" size="12" maxlength="16" id="clienteCelular"/>
     <p></p>
     </form>
 </div>
+
 <div id="d9" class = "div9" style = "display: none;">
-    Rua: <input type="text" name="rua" size="40"/>&nbsp&nbsp Número: <input type="number" name="numero" size="7"/>&nbsp&nbsp Complemento: <input type="text" name="complemento" size="12"/>
+    Rua: <input type="text" name="rua" size="40" id="rua"/>&nbsp&nbsp Número: <input type="number" name="numero" size="7" id="numero"/>&nbsp&nbsp Complemento: <input type="text" name="complemento" size="12" id="comp"/>
     <p></p>
-    Bairro: <input type="text" name="bairro" />&nbsp&nbsp Ponto de referência: <input type="text" name="pontoRef"/>
+    Bairro: <input type="text" name="bairro" id="bairro"/>&nbsp&nbsp Ponto de referência: <input type="text" name="pontoRef" id="pontoRef"/>
     </form>
 </div>
 
-<div class = "div11">
-    <p><h4>Deseja confirmar pedido?</h4></p>
-    <input type="radio" id="sim" name="pedido" value="sim" onclick="confimarPedido()"/> Sim 
-    <input type="radio" id="nao" name="pedido" value="nao" onclick="confimarPedido()"/> Não - Página será resetada<br/>
+<div class = "pagamento">
+    <p></p>
+    <p><h4>Escolha a forma de pagamento:</h4></p>
+    <input type="radio" name="pag" id="cartao" value="cartao" onclick="esconderOpcoes()"> Cartão - Débito ou Crédito<br>
+    <input type="radio" name="pag" id="pix" value="pix" onclick="esconderOpcoes()"> Pix<br>
+    <input type="radio" name="pag" id="PicPay" value="PicPay" onclick="esconderOpcoes()"> PicPay<br>
+    <input type="radio" name="pag" id="dinheiro" value="dinheiro" onclick="formaPagamento()"> Dinheiro<br>
+
+    <script>
+        function formaPagamento(){
+            document.getElementById("din").style.display = "inline";
+        }
+        function esconderOpcoes(){
+            document.getElementById("din").style.display = "none";
+        }
+    </script>
 </div>
 
-<div class = "div12">
+<div id="din" style="display: none;">
+    <p>Precisa de troco?</p>
+    <input type="radio" name="troco" id="sdindin" value="dindin" onclick="calcularTroco()"> Sim <input type="number" name="caixaTroco" id="troco" style="display: none;" onclick="calcularTroco()"><br>
+    <input type="radio" name="troco" id="ndindin" value="ndindin" onclick="naoCalcularTroco()"> Não<br>
+
+
+    <script>
+        function calcularTroco(){
+            document.getElementById("sdindin").style.display = "inline";
+            document.getElementById("troco").style.display = "inline";
+        }
+        function naoCalcularTroco(){
+            document.getElementById("troco").style.display = "none"; 
+        }
+    </script>
+</div>
+
+
+
+<div class = "endereco">
     <script>
         function mostrarEndereco(){
             var endereco = document.getElementsByName("rua").value;
@@ -147,5 +433,36 @@
     </script>
 </div>
     <script src="./../js/script.js"></script>
+<div id="pcFinal">
+    <p><input type="button" name="preco" value="Valor Final" onclick="mostrarPrecoFinal()"></p>
+</div>
+<div id="srcFinal" style="display: none;">
+    <script>
+        document.write(`O valor total final é: R$ ${precoFinal}`)
+    </script>
+</div>
+<div class = "div11">
+    <input type="button" id="sim" name="pedido" value="Confirmar Pedido" onclick="confimarPedido()"/>
+    <script>
+        function confimarPedido(){
+            document.getElementById("pedido").style.display = "inline";            
+        }
+    </script>
+</div>
+<div id="pedido" style="display: none;">
+    <script>
+        // let nome = document.querySelector('nomeCliente').value;
+        // let celular = document.querySelector('clienteCelular').value;
+        // let endereco = document.querySelector('rua').value + "," + document.querySelector('numero').value + "," + document.querySelector('comp').value + "," + document.querySelector('bairro').value + "," + document.querySelector('pontoRef').value + ".";
+        // var tamDaPizza = document.querySelector('input[name="tamanho"]:checked').value;
+        // document.querySelector('input[name="tamanho"]:checked').val();
+
+        
+        // var tamDaPizza = document.getElementsByName("tamanho").checked;
+        // document.write(tamDaPizza);
+        
+    </script>
+ </div>-->
+
 </body>
 </html>
