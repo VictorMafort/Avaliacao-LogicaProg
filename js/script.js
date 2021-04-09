@@ -58,25 +58,30 @@
   let formaDePagamento = ['debito', 'credito', 'pix', 'picPay', 'dinheiro'];
 
 
-var tamanho = escolherTamanho();
-var borda = escolherBorda();
-var bebida = escolherBebida();
-var entrega = escolherEntrega();
+// var tamanho = escolherTamanho();
+// var borda = escolherBorda();
+// var bebida = escolherBebida();
+// var entrega = escolherEntrega();
+
+var pedido = {
+  tipoDePizza: undefined
+}
+
 // document.write(`${tamanho}, ${borda}, ${bebida}, ${entrega}`);
 function escolherTamanho() {
   let tipo = document.getElementsByName("tamanho");
   if (tipo[0].checked) {
-    tamanho = tamanhoPizza[0].preco;
+    pedido.tipoDePizza = tamanhoPizza[0];
   } else if (tipo[1].checked) {
-    tamanho = tamanhoPizza[1].preco;
+    pedido.tipoDePizza = tamanhoPizza[1];
   } else if (tipo[2].checked) {
-    tamanho = tamanhoPizza[2].preco;
+    pedido.tipoDePizza = tamanhoPizza[2];
   } else {
-    tamanho = tamanhoPizza[3].preco;
+    pedido.tipoDePizza = tamanhoPizza[3];
   }
-  return tamanho;
+  return tipo;
 }
-
+console.log(escolherTamanho());
 function escolherBorda() {
   let tipo = document.getElementsByName("borda");
   if (tipo[0].checked) {
@@ -204,7 +209,7 @@ function escolherEntrega() {
 //     }
 //   }
 
-var precoFinal = tamanho + borda + bebida + entrega;
+// var precoFinal = tamanho + borda + bebida + entrega;
 
 function mostrarPrecoFinal(){
     document.getElementById("srcFinal").style.display = "inline";
