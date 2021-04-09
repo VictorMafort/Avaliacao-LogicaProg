@@ -263,21 +263,7 @@ main {
 .header_menu ul li a.menu_ativo {
   color: #fff;
 }
-/* .introducao {
-  width: 100%;
-  height: 180px;
-  background-color: #ee3a43;
-  margin-top: 80px;
-  text-align: center;
-  padding: 20px 0;
-}
-.introducao h1 {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 23px;
-} */
+
 .quote-externo {
   max-width: 250px;
   margin: 0 auto;
@@ -327,17 +313,17 @@ main {
   padding-bottom: 10px;
 }
 
-.div11 input {
+.div11 input, .div12 input {
   border: 4px solid #008f39;
   padding: 9px 18px;
   color: #008f39;
   font-size: 14px;
   line-height: 20px;
   text-transform: uppercase;
-  /* letter-spacing: 0.1em; */
-  /* font-weight: 700; */
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-.div11 input:hover {
+.div11 input:hover, .div12 input:hover {
   color: #ee3a43;
   border-color: #ee3a43;
 }
