@@ -62,7 +62,7 @@ var tamanho = escolherTamanho();
 var borda = escolherBorda();
 var bebida = escolherBebida();
 var entrega = escolherEntrega();
-document.write(`${tamanho}, ${borda}, ${bebida}, ${entrega}`);
+// document.write(`${tamanho}, ${borda}, ${bebida}, ${entrega}`);
 function escolherTamanho() {
   let tipo = document.getElementsByName("tamanho");
   if (tipo[0].checked) {
