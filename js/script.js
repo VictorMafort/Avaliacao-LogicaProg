@@ -1,18 +1,3 @@
-// EPER - Planejamento do Sistema
-//Ele precisa que neste sistema o usuário consiga escolher:
-// O tamanho da pizza ()
-// Tipo de borda ()
-// Sabores (Apenas 2 sabores por pizza) (Apenas uma pizza) ()
-// Bebidas (Apenas uma) ()
-// Tipo de entrega ()
-// Dados para entrega: Nome, Celular, Rua, Número, Complemento, Bairro, Ponto de referência ()
-// Confirmar pedido ()
-// Forma de Pagamento (somente uma) ()
-// Mostar o valor do pedido na tela no final do pedido ()
-// Informar numero do pedido randomico ()
-// mandar uma mensagem ao usuário desta forma: “Agradecemos sua preferência senhor(a) Fulano de tal.” ()
-// document.write(`"Agradecemos sua preferência senhor(a) "${nome}"`)
-
 let tamanhoPizza = [
   { tamanho: 'Pequena 20cm', preco: 25.00 },
   { tamanho: 'Média 25cm', preco: 30.00 },
@@ -63,9 +48,9 @@ function escolherTamanho() {
     pedido.tipoDePizza = tamanhoPizza[1];
   } else if (tipo[2].checked) {
     pedido.tipoDePizza = tamanhoPizza[2];
-  } else if (tipo[3].checked){
+  } else if (tipo[3].checked) {
     pedido.tipoDePizza = tamanhoPizza[3];
-  } else{
+  } else {
     pedido.tipoDePizza = 0;
   }
 
@@ -82,7 +67,7 @@ function escolherBorda() {
     pedido.tipoDeBorda = borda[2];
   } else if (tipo[3].checked) {
     pedido.tipoDeBorda = borda[3];
-  } else if (tipo[4].checked){
+  } else if (tipo[4].checked) {
     pedido.tipoDeBorda = borda[4];
   } else {
     pedido.tipoDeBorda = 0;
@@ -106,7 +91,7 @@ function escolherPizzaUm() {
     pedido.tipoSabor1 = saborPizza[5];
   } else if (tipo[6].checked) {
     pedido.tipoSabor1 = saborPizza[6];
-  } else if (tipo[7].checked){
+  } else if (tipo[7].checked) {
     pedido.tipoSabor1 = saborPizza[7];
   } else {
     pedido.tipoSabor1 = "-";
@@ -129,10 +114,10 @@ function escolherPizzaDois() {
     pedido.tipoSabor2 = saborPizza[5];
   } else if (tipo[6].checked) {
     pedido.tipoSabor2 = saborPizza[6];
-  } else if (tipo[7].checked){
+  } else if (tipo[7].checked) {
     pedido.tipoSabor2 = saborPizza[7];
   } else {
-    pedido.tipoSabor2 ="-";
+    pedido.tipoSabor2 = "-";
   }
   return pedido.tipoSabor2;
 }
@@ -149,11 +134,11 @@ function escolherBebida() {
     pedido.tipoDeBebida = bebidas[3];
   } else if (tipo[4].checked) {
     pedido.tipoDeBebida = bebidas[4];
-  } else if (tipo[5].checked){
+  } else if (tipo[5].checked) {
     pedido.tipoDeBebida = bebidas[5];
-  }else {
+  } else {
     pedido.tipoDeBebida = 0;
-  } 
+  }
   return pedido.tipoDeBebida.preco;
 }
 function escolherEntrega() {
@@ -161,7 +146,7 @@ function escolherEntrega() {
 
   if (tipo[0].checked) {
     pedido.tipoDeEntrega = entrega[0];
-  } else if(tipo[1].checked) {
+  } else if (tipo[1].checked) {
     pedido.tipoDeEntrega = entrega[1];
   } else {
     pedido.tipoDeEntrega = 0;
@@ -174,7 +159,7 @@ function escolherEntrega2() {
 
   if (tipo[0].checked) {
     pedido.tipoDeEntrega = entrega[0];
-  } else if(tipo[1].checked) {
+  } else if (tipo[1].checked) {
     pedido.tipoDeEntrega = entrega[1];
   } else {
     pedido.tipoDeEntrega = 0;
@@ -193,12 +178,12 @@ function escolherPagamento() {
     pedido.pagamento = formaDePagamento[2];
   } else if (tipo[3].checked) {
     pedido.pagamento = formaDePagamento[3];
-  } else if(tipo[4].checked){
+  } else if (tipo[4].checked) {
     pedido.pagamento = formaDePagamento[4];
   } else {
     pedido.pagamento = 0;
   }
-  
+
   return pedido.pagamento;
 }
 
@@ -231,30 +216,27 @@ var tipoDePagamento = "Não informado";
 var troco = "Sem troco."
 
 function imprimeResumoPedido(precoFinal) {
-alert(`Olá, Sr.(a) ${nomeUsuario}, este é o seu pedido até o momento:\n
+  alert(`Olá, Sr.(a) ${nomeUsuario}, este é o seu pedido até o momento:\n
 Uma pizza metade ${escolherPizzaUm()}, metade ${escolherPizzaDois()}.\n
 A bebida escolhida foi: ${pedido.tipoDeBebida.sabor}\n
 O tipo de entrega escolhido foi: ${pedido.tipoDeEntrega.tipo}\n
 E o Valor Total do seu pedido fica em: R$ ${precoFinal.toFixed(2).replace(".", ",")}`)
 }
+var numeroAleatorio = Math.floor(Math.random() * 1000);
 
 function tempoDeEsperaEAgradecimento() {
-  // nomeUsuario = document.getElementById("nomeCliente").value;
-  let numeroAleatorio = Math.floor(Math.random() * 1000); // numero aleatorio entre 0 e 1000
   alert(`O número do seu pedido é ${numeroAleatorio}, e o tempo estimado para a entrega é de 90 minutos. \n Agradecemos sua preferência senhor(a) ${nomeUsuario}.`);
   display();
 }
-
-
-
-
 function display() {
-  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=450,height=350')
-  message = `<ul><li><b>Nome do Cliente: </b> ${nomeUsuario}`;
+  DispWin = window.open('', 'NewWin', 'toolbar=no,status=no,width=450,height=350')
+  message = `<ul><b><center>PEDIDO FINALIZADO!</center>`;
+  message += `<li><b>Pedido de Número: </b> ${numeroAleatorio}`;
+  message += `<li><b>Nome do Cliente: </b> ${nomeUsuario}`;
   message += `<li><b>Celular: </b> ${numeroCelular}`;
   message += `<li><b>Endereço: </b> ${nomeRua}, ${numeroCasa}, ${bairroCasa}, ${complemento}.`;
   message += `<li><b>Ponto de Referência: </b> ${pontoReferencia}`;
-    message += `<li><b>Uma pizza metade</b> ${escolherPizzaUm()}, <b>metade</b> ${escolherPizzaDois()}.`;
+  message += `<li><b>Uma pizza metade</b> ${escolherPizzaUm()}, <b>metade</b> ${escolherPizzaDois()}.`;
   message += `<li><b>Bebida: </b>${pedido.tipoDeBebida.sabor}`;
   message += `<li><b>Tipo de Entrega: </b>${escolherEntrega2()}`;
   // message += `<li><b>Forma de Pagamento: </b>${escolherPagamento()}</ul>`;
@@ -263,10 +245,3 @@ function display() {
   // </ul>`;
   DispWin.document.write(message);
 }
-
-
-// message += `<li><b>Uma pizza metade</b> ${escolherPizzaUm()}, <li><b>metade</b> ${escolherPIzzaDois()}`;
-// message += `<li><b>Bebida: </b>${pedido.tipoDeBebida.sabor}`;
-// message += `<li><b>Tipo de Entrega: </b>${pedido.tipoDeEntrega.tipo}`;
-// message += `<li><b>Valor Total do Pedido: </b>${precoFinal.toFixed(2).replace(".", ",")}`;
-// message += `<li><b>Forma de Pagamento: </b>${escolherPagamento()}
